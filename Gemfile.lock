@@ -79,7 +79,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
-  bcrypt (~> 3.1.7)
+  bcrypt
   pg
   puma
   rails_12factor

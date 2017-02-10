@@ -1,27 +1,19 @@
 <!-- <h1>Hello World</h1>
 <p>See Me in views/static/index.html.erb</p> -->
 
-<div class="title">
+<!-- <div class="title">
 <h1>Clora <br><span>A place to share your knowledge</span></h1>
-</div>
+</div> -->
 
-<div class="signup-form">
-<div class="col-signup">
-  <h2>Sign up for an account!</h2>
-</div>
-
-<form class="col-signup2" method="post" action="/signup">
-    <label>
-      <input type=text class="form-control" placeholder="Email" name="user[email]">
-    </label>
-      <label>
-        <input type=password class="form-control" placeholder="Password" name="user[password]">
-      </label>
-    <label>
-      <input class="btn btn-default btn-md" type=submit value="Sign up">  
-    </label>
-</form> 
-
+<div class="signup-page">
+  <div class="form">
+    <form class="register-form" method="post" action="/signup">
+        <h2>Sign up for an account!</h2>
+          <input type=text class="form-control" placeholder="Email" name="user[email]">
+            <input type=password class="form-control" placeholder="Password" name="user[password]">
+          <input class="btn btn-default btn-md button" type=submit value="Sign up">
+    </form>
+  </div>
 </div>
 
 
