@@ -1,0 +1,45 @@
+body { 
+  background: url(https://s-media-cache-ak0.pinimg.com/originals/f5/a4/15/f5a415886acdfcd2683b4720d8e74e4f.jpg)no-repeat; background-size: 100%;
+}
+
+
+.title {
+  width: 400px;
+  height: 50px;
+  margin: auto;
+  color: black;
+  padding-top: 10em;
+  text-align: center;
+}
+
+.signup-form {
+  background-color: #fff;
+  width: 30em;
+  margin: auto;
+  padding-top: 7em;
+}
+
+.col-signup {
+  width: 200px;
+  height: 200px;
+  float: left;
+  padding: 10px;
+}
+
+.col-signup2 {
+  width: 220px;
+  height: 200px;
+  float: right; 
+  padding: 15px;
+} 
+
+.container-signup {
+  width:150px;
+  margin: auto;
+}
+
+span {
+  font-size: 20px;
+  text-align: left;
+  
+}
