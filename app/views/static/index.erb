@@ -7,12 +7,21 @@
 <div class="main-bg">
   <div class="signup-page">
     <div class="form">
-      <form class="register-form" method="POST" action="/signin">
-          <h2>Login to Quora</h2>
+      <div id="main-icon">
+        <i class="material-icons face">face</i>
+      </div>
+      <form class="register-form" method="POST" action="/sessions">
+          <h2>Login | Quora</h2>
             <input type=text class="form-control" placeholder="Email" name="email">
               <input type=password class="form-control" placeholder="Password" name="password">
             <input class="btn btn-default btn-md button" type=submit value="SIGN IN">
-            <p class="message">Not registered?<a href="/signup">Create an account</a></p>
+            <p class="message">Not registered?<a href="/users/new">Create an account</a></p>
+              <% if @invalid_login %>
+              <div id="invalid-popup">
+                <%= "<p>#{@invalid_login}</p>" %>
+              </div>
+              <% end %>
+
       </form>
     </div>
   </div>

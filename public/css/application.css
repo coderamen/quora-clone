@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two|Lora:700");
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 /*body {
   background: black;
@@ -15,19 +17,6 @@ html, body {
   background: #df4930;
   width: 100%;
   height: 100%;
-}
-
-.home-page {
-  width: 100%;
-  height: 100%;
-}
-
-video {
-  width: auto;
-  height: auto;
-  position: fixed;
-  z-index:-2;
-  background-size: cover;
 }
 
 /*.title {
@@ -49,6 +38,7 @@ video {
   font-size: 25px;
   text-align: center;
   margin-bottom: 1em;
+  color: #df4930;
 }
 
 .form {
@@ -61,11 +51,12 @@ video {
 
 .form input {
   background: #f2f2f2;
+  border-color: #d5d0d0;
   width: 100%;
   padding: 15px;
   font-size: 14px;
   box-sizing: border-box;
-  border: 0;
+  border: .5;
   margin: 0 0 15px;
   border-radius: 0;
 }
@@ -80,12 +71,14 @@ video {
 }
 
 .form .message a {
-  font-size: 12px;
+  margin-left: 4px;
+  font-size: 15px;
   text-decoration: none;
 }
 
-.message p {
-  word-spacing: 50px;
+.message {
+  font-size: 15px;
+  text-align: center;
 }
 
 .success-form {
@@ -101,18 +94,39 @@ video {
   color: #df4930;
 }
 
+#invalid-popup {
+  border: 1px solid #df4930;
+  color: #df4930;
+  font-size: 14px;
+  text-align: center;
+  width: 325px;
+  margin: auto;
+  border-radius: 6px;
+}
+
+#invalid-popup p {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+#main-icon i {
+  color: #df4930;
+  margin-top: -20px;
+  font-size: 80px;
+  margin-left: 120px;
+  border: none;
+  outline: none;
+}
+
+
+/* home-page */
+
+.text-muted {
+  color: #fff;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+}
+
 .nav-style {
   background: #df4930;
-}
-
-.container a {
-  position: absolute;
-  color: #fff;
-  font-family: 'Oleo Script', cursive;
-  top: -13px;
-  font-size: 30px;
-}
-
-.navbar {
-  height: 2.8em;
 }
