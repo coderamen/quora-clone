@@ -1,5 +1,10 @@
 get '/' do
-  erb :"static/index"
+  if logged_in?
+    @questions = Question.order("created_at desc")
+    erb :"static/home"
+  else
+    erb :"static/index"
+  end
 end
 
 

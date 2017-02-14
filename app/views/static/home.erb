@@ -1,12 +1,8 @@
     <div class="container">
-      <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Read</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Answer</a>
+            <a class="nav-link active" href="#">Answer</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Questions</a>
@@ -17,7 +13,26 @@
           </ul>
         </nav>
         <h3 class="text-muted">Quora</h3>
-    </div>
+  <!-- A Form for users to ask questions -->
+      <div class="main-display">
+        <div class="display-content">
+          <h1>Your Questions</h1>
+          <% @questions.each do |q| %>
+            <p><%= q.text %>  </p>
+          <% end %>
+  
+      <div class="display-form">
+        <form action="/questions" method="post">
+          <input placeholder="Ask question here" type="text" name="user_input">
+          <input type="submit" value="Ask Questions" style="height:40px">
+        </form>
+      </div>
+      </div>
+      </div>
+</div>
+
+
+
 
 
 
