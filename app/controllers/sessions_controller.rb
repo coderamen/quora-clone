@@ -9,7 +9,7 @@ post '/sessions' do #sign in / direct to action
   end
 end
 
-post '/sessions/' do #sign out
-  session[:id] = nil
+get '/sessions' do #sign out
+  session.clear
   erb :"static/index"
 end
