@@ -1,4 +1,4 @@
-post '/sessions' do #sign in / direct to action
+post '/sessions/logout' do #sign in / direct to action
   user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
@@ -9,7 +9,7 @@ post '/sessions' do #sign in / direct to action
   end
 end
 
-get '/sessions' do #sign out
+get '/sessions/logout' do #sign out
   session.clear
-  erb :"static/index"
+  redirect '/'
 end
