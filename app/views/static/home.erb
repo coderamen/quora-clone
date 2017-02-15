@@ -2,10 +2,10 @@
         <nav>
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
-            <a class="nav-link active" href="#">Answer</a>
+            <a class="nav-link active" href="#">Questions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Questions</a>
+              <a class="nav-link" href="#">Answer</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" type="hidden" href="/sessions/logout">Logout</a>
@@ -16,20 +16,34 @@
   <!-- A Form for users to ask questions -->
       <div class="main-display">
         <div class="display-content">
-          <h1>Your Questions</h1>
+          <h1 style="padding-top: 0.5em; font-weight: 100;">Your Questions</h1>
+          <hr>
           <% @questions.each do |q| %>
-            <p><%= q.text %>  </p>
+            <div class="display-questions">
+              <p><%= q.text %> </p>
+              <form action="/answers/<%= q.id %>" method="get">
+                <input class="btn btn-outline-danger" type="submit" value="Answer">
+              </form>
+            </div>
+            <div class="display-answers">
+            <% ans = Answer.where(question_id: q.id).limit(3) %>
+            <% ans.each do |an| %>
+              <p style="font-weight: 300;"><%= an.text %></p>
+            <% end %>
+            </div>
           <% end %>
-  
+        </div>
+
+
       <div class="display-form">
         <form action="/questions" method="post">
-          <input placeholder="Ask question here" type="text" name="user_input">
-          <input type="submit" value="Ask Questions" style="height:40px">
+          <input placeholder="Ask question here" type="text" name="user_input" style="margin-bottom: 1.5em; height: 38px;">
+          <input class="btn btn-outline-primary" type="submit" value="Ask Questions" style="width: 140px; height: 38px; margin-bottom: 1px">
         </form>
       </div>
       </div>
-      </div>
 </div>
+
 
 
 

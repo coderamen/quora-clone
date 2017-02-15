@@ -1,0 +1,77 @@
+    <div class="container">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+            <a class="nav-link" href="#">Questions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Answer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" type="hidden" href="/sessions/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Quora</h3>
+  <!-- A Form for users to ask questions -->
+      <div class="main-display">
+        <div class="display-content">
+          <h1 style="padding-top: 0.5em">Your Answer</h1>
+          <hr>
+          <div class="display-questions">
+            <%= @question.text %>
+          </div>
+
+          <div class="display-answers">
+            <% @answers.each do |ans| %>
+              <p><%= ans.text %></p>
+            <% end %>
+          </div>
+
+          </div>
+      <div class="display-form">
+        <form action="/answers/<%= @question.id %>" method="post">
+          <input placeholder="Answer Here" type="text" name="answer_input" style="margin-bottom: 1.5em;">
+          <input class="btn btn-outline-success"type="submit" value="Answer">
+        </form>
+      </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="home-page">
+  <nav class="navbar nav-style">
+  <div class="container">
+    <a class="navbar-brand" href="#">Quora</a>
+  </nav>
+
+  <div class="signup-page">
+    <div class="form">
+      <div class="success-form">
+        <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+        <div class="success-content">
+          <p>I'm at my Home Page</p>
+        </div>
+        <a href="/">Sign out</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div> -->
