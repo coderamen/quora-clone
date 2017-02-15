@@ -1,4 +1,4 @@
-class AnswerTable < ActiveRecord::Migration
+class CreateAnswerTable < ActiveRecord::Migration
 	def change
 		create_table :answers do |t|
 			t.integer :user_id

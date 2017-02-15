@@ -16,13 +16,13 @@
   <!-- A Form for users to ask questions -->
       <div class="main-display">
         <div class="display-content">
-          <h1 style="padding-top: 0.5em">Your Answer</h1>
+          <h1 style="padding-top: 0.5em; font-weight: 300; font-size: 40px;">Your Answer</h1>
           <hr>
           <div class="display-questions">
             <%= @question.text %>
           </div>
 
-          <div class="display-answers">
+          <div class="display-answers" style="font-weight: 300;">
             <% @answers.each do |ans| %>
               <p><%= ans.text %></p>
             <% end %>

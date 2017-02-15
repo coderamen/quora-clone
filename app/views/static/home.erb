@@ -1,66 +1,52 @@
-    <div class="container">
-        <nav>
-          <ul class="nav nav-pills float-right">
+<div class="container">
+    <nav>
+        <ul class="nav nav-pills float-right">
             <li class="nav-item">
-            <a class="nav-link active" href="#">Questions</a>
+                <a class="nav-link active" href="#">Questions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Answer</a>
+                <a class="nav-link" href="#">Answer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" type="hidden" href="/sessions/logout">Logout</a>
+                <a class="nav-link" type="hidden" href="/sessions/logout">Logout</a>
             </li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Quora</h3>
-  <!-- A Form for users to ask questions -->
-      <div class="main-display">
+        </ul>
+    </nav>
+    <h3 class="text-muted">Quora</h3>
+    <!-- A Form for users to ask questions -->
+    <div class="main-display">
         <div class="display-content">
-          <h1 style="padding-top: 0.5em; font-weight: 100;">Your Questions</h1>
-          <hr>
-          <% @questions.each do |q| %>
+            <h1 style="padding-top: 0.5em; font-weight: 100;">Your Questions</h1>
+            <hr>
+            <% @questions.each do |q| %>
             <div class="display-questions">
-              <p><%= q.text %> </p>
-              <form action="/answers/<%= q.id %>" method="get">
-                <input class="btn btn-outline-danger" type="submit" value="Answer">
-              </form>
+                <p><%= q.text %>
+                </p>
+                <form action="/answers/<%= q.id %>" method="get">
+                    <input class="btn btn-outline-danger" type="submit" value="Answer">
+                </form>
+                <form action="/upvotes/<%= q.id %>" method="post">
+                  <button class="btn btn-secondary like" type="submit" name="up_vote" style="background-color:#1B6AA5" ><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                  <button class="btn btn-secondary dislike" type="submit" style="background-color: #df4930;"><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                </form>
             </div>
             <div class="display-answers">
-            <% ans = Answer.where(question_id: q.id).limit(3) %>
-            <% ans.each do |an| %>
-              <p style="font-weight: 300;"><%= an.text %></p>
-            <% end %>
+                <% ans = Answer.where(question_id: q.id).limit(3) %>
+                <% ans.each do |an| %>
+                <p style="font-weight: 300;"><%= an.text %></p>
+                <% end %>
             </div>
-          <% end %>
+            <% end %>
         </div>
 
-
-      <div class="display-form">
-        <form action="/questions" method="post">
-          <input placeholder="Ask question here" type="text" name="user_input" style="margin-bottom: 1.5em; height: 38px;">
-          <input class="btn btn-outline-primary" type="submit" value="Ask Questions" style="width: 140px; height: 38px; margin-bottom: 1px">
-        </form>
-      </div>
-      </div>
+        <div class="display-form">
+            <form action="/questions" method="post">
+                <input placeholder="Ask question here" type="text" name="user_input" style="margin-bottom: 1.5em; height: 38px;">
+                <input class="btn btn-outline-primary" type="submit" value="Ask Questions" style="width: 140px; height: 38px; margin-bottom: 1px">
+            </form>
+        </div>
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- <div class="home-page">
   <nav class="navbar nav-style">
