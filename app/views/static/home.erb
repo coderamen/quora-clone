@@ -27,7 +27,7 @@
                 </form>
                 <form action="/upvotes/<%= q.id %>" method="post">
                   <button class="btn btn-secondary like" type="submit" name="up_vote" style="background-color:#1B6AA5; width: 70px" ><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-right:10px"></i>
-                  <%= QuestionVote.where(question_id: q.id, vote: true).count %>
+                  <%= QuestionVote.where(question_id: @question.vote_count %>
                   </button>
 
                   <button class="btn btn-secondary dislike" type="submit" style="background-color: #df4930; width: 70px;"><i class="fa fa-thumbs-down" style="margin-right:10px" aria-hidden="true"></i></button>
