@@ -1,7 +1,7 @@
 get '/' do
   if logged_in?
     @questions = Question.order("created_at desc")
-    @answers = Answer.order("created_at desc").limit(3)
+    @answers = Answer.order("created_at asc").limit(3)
 
     erb :"static/home"
   else

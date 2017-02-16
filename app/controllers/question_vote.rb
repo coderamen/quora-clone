@@ -6,4 +6,5 @@ post '/upvotes/:q_id' do
   else
     question_votes.delete
   end
+  redirect '/'
 end
