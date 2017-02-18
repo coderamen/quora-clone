@@ -8,3 +8,12 @@ post '/upvotes/:q_id' do
   end
   redirect '/'
 end
+
+post '/downvotes/:q_id' do
+  question_votes = QuestionVote.new(question_id: params[:q_id], user_id: current_user.id, vote: false)
+  if question_votes.save
+  else
+    question_votes.delete
+  end
+  redirect '/'
+end

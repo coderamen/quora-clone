@@ -22,17 +22,25 @@
             <div class="display-questions">
                 <p><%= q.text %>
                 </p>
+
                 <form action="/answers/<%= q.id %>" method="get">
                     <input class="btn btn-outline-danger" type="submit" value="Answer">
                 </form>
-                <form action="/upvotes/<%= q.id %>" method="post">
-                  <button class="btn btn-secondary like" type="submit" name="up_vote" style="background-color:#1B6AA5; width: 70px" ><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-right:10px"></i>
-                  <%= q.upvotes %>
-                  </button>
 
-                  <button class="btn btn-secondary dislike" type="submit" style="background-color: #df4930; width: 70px;"><i class="fa fa-thumbs-down" style="margin-right:10px" aria-hidden="true"></i>
-                  <%= q.downvotes %></button>
+                <form action="/upvotes/<%= q.id %>" method="post">
+                    <button class="btn btn-secondary like" type="submit" name="up_vote" style="background-color:#1B6AA5; width: 70px">
+                        <i class="fa fa-thumbs-up" aria-hidden="true" style="margin-right:10px"></i>
+                       <%= q.upvotes(q.id) %>
+                    </button>
                 </form>
+
+                <form action="/downvotes/<%= q.id %>" method="POST">
+                  <button class="btn btn-secondary dislike" type="submit" name="down_vote" style="background-color: #df4930; width: 70px;">
+                      <i class="fa fa-thumbs-down" style="margin-right:10px" aria-hidden="true"></i>
+                      <%= q.downvotes(q.id) %>
+                  </button>
+                </form>
+
             </div>
             <div class="display-answers">
                 <% ans = Answer.where(question_id: q.id).limit(3) %>
