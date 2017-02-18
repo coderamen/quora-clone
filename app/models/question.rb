@@ -16,11 +16,11 @@ class Question < ActiveRecord::Base
     #     vote_count
     # end
 
-    def upvotes(id)
+    def upvotes
         QuestionVote.where(question_id: id, vote: true).count
     end
 
-    def downvotes(id)
+    def downvotes
         QuestionVote.where(question_id: id, vote: false).count
     end
 end
