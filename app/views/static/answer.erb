@@ -1,0 +1,65 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Quora</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="nav-btn" href="#">Question</a>
+                </li>
+                <li>
+                    <a class="nav-btn" href="#about">Answer</a>
+                </li>
+                <li>
+                    <a class="nav-btn" href="#contact">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron"></div>
+    <!-- A Form for users to ask questions -->
+    <div class="main-display">
+        <div class="display-content">
+            <h1 style="padding-top: 0.5em; font-weight: 300; font-size: 40px;">Your Answer</h1>
+            <hr>
+            <div class="display-questions">
+                <%= @question.text %>
+            </div>
+
+            <div class="display-answers" style="font-weight: 300;">
+                <% @answers.each do |ans| %>
+                <p><%= ans.text %></p>
+                <% end %>
+            </div>
+
+        </div>
+        <div class="display-form">
+            <form action="/answers/<%= @question.id %>" method="post">
+                <input placeholder="Answer Here" type="text" name="answer_input" style="margin-bottom: 1.5em;">
+                <input class="btn btn-outline-success" type="submit" value="Answer">
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="home-page">
+  <nav class="navbar nav-style">
+  <div class="container">
+    <a class="navbar-brand" href="#">Quora</a>
+  </nav>
+
+  <div class="signup-page">
+    <div class="form">
+      <div class="success-form">
+        <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+        <div class="success-content">
+          <p>I'm at my Home Page</p>
+        </div>
+        <a href="/">Sign out</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div> -->

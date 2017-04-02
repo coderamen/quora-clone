@@ -1,2 +1,39 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<!-- <h1>Hello World</h1>
+<p>See Me in views/static/index.html.erb</p> -->
+
+<!-- <div class="title">
+<h1>Clora <br><span>A place to share your knowledge</span></h1>
+</div> -->
+<div class="main-bg">
+  <div class="signup-page">
+    <div class="form">
+      <div id="main-icon">
+        <i class="material-icons face">face</i>
+      </div>
+      <form class="register-form" method="POST" action="/sessions">
+          <h2>Login | Quora</h2>
+            <input type=text class="form-control" placeholder="Email" name="email">
+              <input type=password class="form-control" placeholder="Password" name="password">
+            <input class="btn btn-default btn-md button" type=submit value="SIGN IN" style="height:50px;">
+            <p class="message">Not registered?<a href="/users/new">Create an account</a></p>
+              <% if @invalid_login %>
+              <div id="invalid-popup">
+                <%= "<p>#{@invalid_login}</p>" %>
+              </div>
+              <% end %>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <h2>Login</h2>
+<form method=post action=/form>
+    <input type=text placeholder="Email" name="user[email]"><br>
+    <input type=password placeholder="Password" name="user[password]"></br>
+    <input type=submit value="Login">
+</form> -->

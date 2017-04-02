@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 # Adding Sinatra Drivers
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'byebug'
 
 # Adding thin gem as advised
 gem 'thin'
@@ -14,6 +15,7 @@ gem 'thin'
 gem 'activerecord'
 gem 'activesupport'
 gem 'sinatra-activerecord'
+gem 'bcrypt'
 
 # Adding Database elements
 gem 'pg'
